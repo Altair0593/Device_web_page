@@ -58,9 +58,6 @@ function showFitures(n) {
   let fituresBtn = document.getElementsByClassName("btn-fitures");
   let fituresItem = document.getElementsByClassName("fiures-item");
 
-
-  // propery for arrow control
-
   for (i = 0; i < fitures.length; i++) {
     fitures[i].style.display = "none";
   }
@@ -74,4 +71,27 @@ function showFitures(n) {
   fitures[fituresIndex-1].style.display = "inline-flex";
   fituresBtn[fituresIndex-1].className += " btn-fitures__active ";
   fituresItem[fituresIndex-1].className += " fitures-item__active";
+}
+
+// Wright us Popup
+
+let wrightUs = document.getElementById("wrightUs");
+let wrightUsBtn = document.getElementById("wrightUsBtn");
+let closeWrightUs = document.getElementsByClassName("wright-us__btn")[0];
+let body = document.getElementById("body");
+
+
+wrightUsBtn.onclick = function() {
+  wrightUs.style.display = "block";
+  
+}
+
+closeWrightUs.onclick = function() {
+  wrightUs.style.display = "none";
+}
+
+window.onclick = function(event) {
+  if (event.target == wrightUs) {
+    wrightUs.style.display = "none";
+  }
 }
